@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    h1 Coding task in progress! Expire at #{tokenData.expiryDate}
+    p You are coding now
+    p And here is a content of your task
+    p Write at least 3 digits in the code
+    p The code we currently hold is:
+    pre=tokenData.code
+    p Paste your code below and hit send
+    form(action=`/${tokenData.token}`, method="POST")
+        textarea(name="code")
+        input(type="submit")
+
